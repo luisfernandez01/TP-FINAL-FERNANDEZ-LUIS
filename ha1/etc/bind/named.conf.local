@@ -1,0 +1,10 @@
+zone "empresa.izo" {
+    type master;
+    file "/etc/bind/db.empresa.izo";
+};
+
+zone "10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.10.0";
+};
+

@@ -1,0 +1,12 @@
+
+# =====================================================
+# Host HDB - pertenece a LAN LDB (Router RD)
+# =====================================================
+
+ip addr add 10.10.10.1/30 dev eth3
+ip link set eth3 up
+
+# Gateway y DNS
+ip route add default via 10.10.10.2/30
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+

@@ -1,0 +1,24 @@
+$TTL    604800
+@       IN      SOA     ns.empresa.izo. admin.empresa.izo. (
+                        2         ; Serial
+                        604800    ; Refresh
+                        86400     ; Retry
+                        2419200   ; Expire
+                        604800 )  ; Negative Cache TTL
+
+@       IN      NS      ns.empresa.izo.
+ns      IN      A       192.168.10.1
+; ====== Hosts y Routers ======
+
+ha1     IN      A       192.168.10.1
+ra      IN      A       192.168.10.126
+
+rb      IN      A       10.0.255.254
+hb1     IN      A       10.0.0.1
+
+rc      IN      A       172.16.0.254
+hc1     IN      A       172.16.0.1
+
+rd      IN      A       10.0.7.254
+hda     IN      A       10.0.7.1
+hdb     IN      A       10.10.10.1

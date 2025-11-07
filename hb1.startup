@@ -1,0 +1,11 @@
+# =====================================================
+# Host HB1 - LAN de LB (10.0.0.0/16)
+# =====================================================
+
+ip addr add 10.0.0.1/16 dev eth3
+ip link set eth3 up
+ip route add default via 10.0.255.254
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
+
+

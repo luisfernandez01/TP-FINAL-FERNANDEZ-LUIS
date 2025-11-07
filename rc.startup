@@ -1,0 +1,28 @@
+# =====================================================
+# Router RC
+# Enlaces: RB (eth0), RF (eth1), RD (eth2)
+# LAN HC1 (eth3)
+# =====================================================
+
+
+# --------------------------
+# Direccionamiento IP
+# --------------------------
+# Enlace RC-RB
+ip addr add 192.168.50.6/30 dev eth0
+ip link set eth0 up
+
+# Enlace RC-RF
+ip addr add 192.168.28.51/30 dev eth1
+ip link set eth1 up
+# Enlace RC-RD
+ip addr add 192.168.120.9/30 dev eth2
+ip link set eth2 up
+# LAN HC1 (172.16.0.0/24)
+ip addr add 172.16.0.254/24 dev eth3
+ip link set eth3 up
+# --------------------------
+# Habilitar reenvío IP
+# --------------------------
+sysctl -w net.ipv4.ip_forward=1
+

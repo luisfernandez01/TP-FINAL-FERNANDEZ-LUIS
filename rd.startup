@@ -1,0 +1,15 @@
+# Router RD
+# Asignación de IPs
+ip addr add 10.0.7.1/21 dev eth2        # LAN LDA
+ip addr add 10.10.10.1/30  dev eth3             # LAN LDB
+ip addr add 192.168.200.13/30 dev eth1    # Enlace con RE (ED_E)
+ip addr add 192.168.120.10/30 dev eth0    #Enlace con RC(ED_C)
+# Activar interface
+ip link se eth0  up
+ip link set eth1 up
+ip link set eth2 up
+ip link set eth3 up
+
+# Habilitar reenvío de paquetes
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
