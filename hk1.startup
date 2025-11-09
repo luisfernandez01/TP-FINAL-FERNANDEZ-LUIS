@@ -1,14 +1,1 @@
-# =====================================================
-# Host Hk1 - LAN Lk (192.169.3.0/28)
-# =====================================================
-
-# IP y conexión
-ip addr add 192.169.3.1/28 dev eth1
-ip link set eth1 up
-
-# Gateway
-ip route add default via 192.169.3.14
-
-# DNS
-echo "nameserver 8.8.8.8" > /etc/resolv.con
-
+Cuarto commit: reestructuración de OSPFd

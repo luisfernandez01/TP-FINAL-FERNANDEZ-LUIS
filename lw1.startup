@@ -1,0 +1,13 @@
+# =====================================================
+# Host Hw1 - LAN Lw (172.16.30.0=/29)
+# =====================================================
+
+# IP y conexión
+ip addr add 172.16.30.1/29 dev eth1
+ip link set eth1 up
+
+# Gateway
+ip route add default via 172.16.30.6
+# DNS
+echo "nameserver 8.8.8.8" > /etc/resolv.con
+

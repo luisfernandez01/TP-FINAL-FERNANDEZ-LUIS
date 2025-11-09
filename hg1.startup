@@ -1,13 +1,1 @@
-# =====================================================
-# Host LG
-# Conectado a RG - LAN 10.1.1.0/29
-# =====================================================
-#asignaciones de ip 
-ip addr add 10.1.1.1/29 dev eth2 
-ip link set eth2 up
-# Gateway
-ip route add default via 10.1.1.6 
-# DNS
-echo "nameserver 8.8.8.8" > /etc/resolv.conf
-
-
+Cuarto commit: reestructuración de OSPFd
