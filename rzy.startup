@@ -1,0 +1,27 @@
+# =====================================================
+# Router RZY
+# Enlaces: EC_ZY(eth0), EZY_ (eth1), 
+# LAN LZ (eth3),LAN LY(eth2# )
+# =====================================================
+# --------------------------
+# Direccionamiento IP
+# --------------------------
+ #Enlace con RC(EZY_C)
+ip addr add 192.168.120.10/30 dev eth0
+# Enlace con RE (EZY_E)
+ip addr add 192.168.200.13/30 dev eth1
+ # LAN LY
+ip addr add 10.0.7.2/21 dev eth2  
+# LAN LZ
+ip addr add 10.10.10.2/29  dev eth3    
+
+
+# Activar interface
+ip link set eth0  up
+ip link set eth1 up
+ip link set eth2 up
+ip link set eth3 up
+
+# Habilitar reenvío de paquetes
+echo 1 > /proc/sys/net/ipv4/ip_forward
+

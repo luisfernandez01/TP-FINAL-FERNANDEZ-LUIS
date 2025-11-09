@@ -1,0 +1,14 @@
+# =====================================================
+# Host Hj1 - LAN Lj (10.2.0.0/20)
+# =====================================================
+
+# IP y conexión
+ip addr add 10.2.0.0/20 dev eth1
+ip link set eth1 up
+
+# Gateway
+ip route add default via  10.2.0.15.254
+
+# DNS
+echo "nameserver 8.8.8.8" > /etc/resolv.con
+

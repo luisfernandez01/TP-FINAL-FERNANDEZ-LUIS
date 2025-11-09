@@ -1,0 +1,28 @@
+#=======================================================
+# Router RA - Conexión a Internet real + OSPF
+# Enlaces con RH, RB y LAN con HA1
+# =======================================================
+
+# ---------------------------------
+# Asignar direcciones IP
+# ---------------------------------
+# LAN RA (HA1)
+ip addr add 192.168.10.126/25 dev eth0
+ip link set eth0 up
+# Enlace RA-RH
+ip addr add 192.168.15.45/30 dev eth1
+
+# Enlace RA-RB
+ip addr add 192.128.150.1/30 dev eth2
+ip link set eth2 up
+
+# Internet real (obtener IP dinámica)
+dhclient eth3
+
+# ---------------------------------
+# Reenvío IP y NAT
+# ---------------------------------
+sysctl -w net.ipv4.ip_forward=1
+iptables -t nat -A POSTROUTING -o eth3 -j MASQUERADE
+
+

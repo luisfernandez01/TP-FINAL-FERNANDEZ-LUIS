@@ -1,0 +1,36 @@
+# =====================================================
+# Router RF
+# Enlaces: RG (eth0),RK(eth1), RE(eth3),RC(eth4)
+# LAN LF (eth2)
+# =====================================================
+
+# --------------------------
+# Direccionamiento IP
+#---------------------------
+
+# Enlace RF-RG
+ip addr add 192.168.30.21/30 dev eth0
+ip link set eth0 up
+
+# Enlace RF-RK
+ip addr add 192.169.28.6/30 dev eth1
+ip link set eth1 up
+
+# LAN LF (192.168.1.0/30)
+ip addr add 192.168.1.1/30 dev eth2
+ip link set eth2 up
+
+# Enlace RF-RE
+ip addr add 192.168.250.17/30 dev eth3
+ip link set eth3 up
+
+# Enlace RF-RC
+ip addr add 192.168.28.52/30 dev eth4
+ip link set eth4 up
+
+
+# --------------------------
+# Habilitar reenvío IP
+# --------------------------
+sysctl -w net.ipv4.ip_forward=1
+

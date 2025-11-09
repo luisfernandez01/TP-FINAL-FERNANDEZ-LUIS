@@ -1,0 +1,41 @@
+# =====================================================
+# Host HA1 - LAN de RA (192.168.10.0/25)
+# Servidor DNS principal (empresa.izo)
+# =====================================================
+
+# IP y conexión LAN
+ip addr add 192.168.10.1/25 dev eth0
+ip link set eth0 up
+
+# Gateway hacia Internet (Router RA)
+ip route add default via 192.168.10.126
+
+# -----------------------------------------------------
+# Instalación del servicio DNS (solo si no está instalado)
+# -----------------------------------------------------
+apt update -qq && apt install -y bind9 dnsutils || true
+
+# -----------------------------------------------------
+# Copiar configuración DNS desde el directorio del laboratorio
+# -----------------------------------------------------
+mkdir -p /etc/bind
+cp -r /ha1/etc/bind/* /etc/bind/ 2>/dev/null || true
+
+# -----------------------------------------------------
+# Configurar resolución local e Internet
+# -----------------------------------------------------
+echo "search empresa.izo" > /etc/resolv.conf
+echo "nameserver 127.0.0.1" >> /etc/resolv.conf
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+
+# -----------------------------------------------------
+# Iniciar servicio DNS
+# -----------------------------------------------------
+service bind9 restart
+
+# Verificación rápida
+echo "Servidor DNS HA1 listo en 192.168.10.1 (empresa.izo)"
+
+
+
+

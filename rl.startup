@@ -1,0 +1,22 @@
+# =====================================================
+# Router RL
+## =====================================================
+
+#asignaciones IP
+
+# Enlace RL-RK
+ip addr add 192.60.100.41/30 dev eth0
+ip link set eth0 up
+
+# LAN LL (192.162.0.0/20)
+# Gateway para la LAN = 192.60.15.254 (RL)
+ip addr add 192.162.15.254/20 dev eth1
+ip link set eth1 up
+
+# Enlace RL_RE
+ip addr add 192.168.100.46/30 dev eth3
+ip link set eth3 up
+# --------------------------
+# Habilitar reenvío IP
+# --------------------------
+sysctl -w net.ipv4.ip_forward=1

@@ -1,0 +1,10 @@
+# =====================================================
+# Host Hz1 - LAN de LZ (10.10.10.10/29)
+# =====================================================
+# IP y conexión
+ip addr add 10.10.2/29 dev eth3
+ip link set eth3 up
+# Gateway
+ip route add default via 10.10.10.6
+#DNS
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
