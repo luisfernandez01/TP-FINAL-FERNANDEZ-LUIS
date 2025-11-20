@@ -1,28 +1,44 @@
 #=======================================================
 # Router RA - Conexión a Internet real + OSPF
 # Enlaces con RH, RB y LAN con HA1
-# =======================================================
+# =========================================   
+#------------------------------
+# Levantar interfaces y asignar IPs
+# ---------------------------------
+sleep 1
 
-# ---------------------------------
-# Asignar direcciones IP
-# ---------------------------------
-# LAN RA (HA1)
-ip addr add 192.168.10.126/25 dev eth0
+# eth0 - LAN RA (con HA1)
 ip link set eth0 up
-# Enlace RA-RH
-ip addr add 192.168.15.45/30 dev eth1
+ip addr add 192.168.10.126/25 dev eth0
 
-# Enlace RA-RB
-ip addr add 192.128.150.1/30 dev eth2
+# eth1 - Enlace RA-RH
+ip link set eth1 up
+ip addr add 192.168.100.30/30 dev eth1
+
+# eth2 - Enlace RA-RB
 ip link set eth2 up
+ip addr add 192.168.100.1/30 dev eth2
 
-# Internet real (obtener IP dinámica)
+# eth3 - Interface a Internet (DHCP real)
+ip link set eth3 up
 dhclient eth3
 
 # ---------------------------------
-# Reenvío IP y NAT
+# Routing y NAT
 # ---------------------------------
 sysctl -w net.ipv4.ip_forward=1
-iptables -t nat -A POSTROUTING -o eth3 -j MASQUERADE
+# -----------------------------
+# Levantar FRR (Zebra + OSPF)
+# -----------------------------
+sleep 2   # esperar que las interfaces estén activas
 
+# Rutas relativas dentro del contenedorn
+zebra -d -f /ospfd/zebra.conf
+sleep 1
+ospfd -d -f /ospfd/ospfd.conf
+
+# ---------------------------------
+# Mantener vivo el contenedor
+# ---------------------------------
+sleep infinity
 

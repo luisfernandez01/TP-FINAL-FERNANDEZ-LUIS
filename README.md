@@ -1,12 +1,14 @@
 # Proyecto Final Laboratorio Kathará
 
-## segundo commit
+## tercer commit
  Cambios realizados
-- **Corrección de nomenclatura:** Se normalizaron los nombres de routers y hosts en los archivos `.startup` y en `lab.conf`.
-- **Agregado de nodos faltantes:** Se incorporaron los routers y hosts restantes, completando la topología de 12 routers.
-- **Ajustes de configuración de red:** Se actualizaron direcciones IP, tablas de ruteo y parámetros.
-- **Optimización de ejecución:** El laboratorio puede iniciarse sin abrir una terminal por nodo, utilizando:
-  ```bash
+ **Implementación de enrutamiento ospf:** : Se configuró OSPF en todos los routers de la topología, respetando áreas, adyacencias y métricas.
+ **Configuración de áreas:**  Se establecieron  las áreas OSPF (Área 0, Área 1 y Área 2) entre routers
+ **Asignación de costos:** Se crea archivo txt con metricas asignadas.
+ **Generación y verificación del arbol spf:** Se calculó el árbol SPF desde el router RA (salida a Internet),
+**Propagación de rutas y Pruebas de convergencia :**Se reinician router y modifican costos  para validar reclaculo automáticos.  
+
+```bash
   kathara lstart --noterminals / kathara lrestart --noterminals
 
 

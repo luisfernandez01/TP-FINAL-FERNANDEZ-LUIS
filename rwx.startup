@@ -1,22 +1,33 @@
 #======================================
 # Router RWX
 #=====================================
-# Enlace LX
-ip addr add 192.168.2.1/29 dev eth0
+# Enlace LAN  LX
+ip addr add 192.168.2.6/29 dev eth0
 ip link set eth0 up
 
-# Enlace LW
-ip addr add 172.16.30.1/29 dev eth1
+# Enlace LAN LW
+ip addr add 172.16.30.6/29 dev eth1
 ip link set eth1 up
 
-# Enlace Rwx-J
-ip addr add 192.100.0.32/30 dev eth2
+# Enlace RWX-J
+ip addr add 192.168.100.37/30 dev eth2
 ip link set eth2 up
 
 # Enlace RWX-H
-ip addr add 172.20.110.30/30 dev eth3
+ip addr add 192.168.100.34/30 dev eth3
 ip link set eth3 up
 # --------------------------
 # Habilitar reenvío IP
 # --------------------------
 sysctl -w net.ipv4.ip_forward=1
+# --------------------------
+# Levantar Zebra y OSPF
+# --------------------------
+sleep 1
+zebra -d -f /ospfd/zebra.conf
+sleep 1
+ospfd -d -f /ospfd/ospfd.conf
+
+# Mantener contenedor vivo
+sleep infinity
+# --------------------------
