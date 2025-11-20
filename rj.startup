@@ -1,25 +1,40 @@
-# ===========
-# Router Rj
-# ===========
+# ===================================
+# Router RJ - STARTUP CORREGIDO
+# Enlaces: RWX(eth0), LJ(eth1), RK(eth2), RG(eth3)
+# ===================================
 
-#asignaciones de IP
+# --------------------------
+# Direccionamiento IP
+# --------------------------
 
 # Enlace RJ-RWX
-ip addr add 192.0.100.34/30 dev eth0
+ip addr add 192.168.100.38/30 dev eth0
 ip link set eth0 up
 
-# Enlace LJ
-ip addr add 10.2.0.1/20 dev eth1
+# LAN LJ
+ip addr add 10.2.15.254/20 dev eth1
 ip link set eth1 up
 
 # Enlace RJ-RK
-ip addr add 192.50.100.38/30 dev eth2
+ip addr add 192.168.100.45/30 dev eth2
 ip link set eth2 up
 
-# Enlace RJ_RG
-ip addr add 182.169.28.24/30 dev eth3
+# Enlace RJ-RG
+ip addr add 192.168.100.41/30 dev eth3
 ip link set eth3 up
+
 # --------------------------
 # Habilitar reenvío IP
 # --------------------------
 sysctl -w net.ipv4.ip_forward=1
+
+# --------------------------
+# Levantar Zebra y OSPF
+# --------------------------
+sleep 1
+zebra -d -f /ospfd/zebra.conf
+sleep 1
+ospfd -d -f /ospfd/ospfd.conf
+
+sleep infinity
+
