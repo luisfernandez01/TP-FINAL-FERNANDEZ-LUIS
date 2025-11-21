@@ -6,13 +6,13 @@
   Se configuró OSPF en todos los routers de la topología, respetando áreas, adyacencias y métricas.
 
 - **Configuración de áreas:**  
-  Se establecieron correctamente las áreas OSPF.
-    Area 0: RA →  RB → RC → RZY
-    Area 1: RH →  RG → RF → RE
+  Se establecieron correctamente las áreas OSPF.  
+    Area 0: RA → RB → RC → RZY  
+    Area 1: RH → RG → RF → RE  
     Area 2: RWX → RJ → RK → RL
- 
-    Interconexiones entre zonas a través de RA–RH–RWX, RB–RG–RK, RC–RF–RK, RZY–RE–R 
-    en carpetas de imagenes se encuentr la tabla de costos
+  
+    Interconexiones entre zonas a través de RA–RH–RWX, RB–RG–RK, RC–RF–RK, RZY–RE–R.  
+    En la carpeta de imágenes se encuentra la tabla de costos.
 
 - **Asignación de costos:**  
   Se creó un archivo `metricas.txt` con todos los costos asignados por interfaz.
@@ -29,12 +29,4 @@
 
 ```bash
 kathara lstart --noterminals
-kathara lrestart --noterminals ```
-
----
-## Carpeta de imágenes
-Todas las imágenes del proyecto están en la carpeta `imagenes`.
-
-### Topología de red
-
-![Topología](imágenes/topologia_tp_final_1.jpg)
+kathara lrestart --noterminals
