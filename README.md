@@ -36,4 +36,5 @@ kathara lrestart --noterminals
 Todas las imágenes del proyecto están en la carpeta `imagenes`.
 
 ### Topología de red
-![Topología de red](imagenes/topologia_tp_final.jpg)
+
+![Topología](imágenes/topologia_tp_final_1.jpg)
