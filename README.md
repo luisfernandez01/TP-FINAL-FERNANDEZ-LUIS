@@ -29,9 +29,9 @@
 
 ```bash
 kathara lstart --noterminals
-kathara lrestart --noterminals
+kathara lrestart --noterminals ```
 
-
+---
 ## Carpeta de imágenes
 Todas las imágenes del proyecto están en la carpeta `imagenes`.
 
