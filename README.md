@@ -1,15 +1,35 @@
 # Proyecto Final Laboratorio Kathará
 
 ## tercer commit
- Cambios realizados
- **Implementación de enrutamiento ospf:** : Se configuró OSPF en todos los routers de la topología, respetando áreas, adyacencias y métricas.
- **Configuración de áreas:**  Se establecieron  las áreas OSPF (Área 0, Área 1 y Área 2) entre routers
- **Asignación de costos:** Se crea archivo txt con metricas asignadas.
- **Generación y verificación del arbol spf:** Se calculó el árbol SPF desde el router RA (salida a Internet),
-**Propagación de rutas y Pruebas de convergencia :**Se reinician router y modifican costos  para validar reclaculo automáticos.  
+
+- **Implementación de enrutamiento OSPF:**  
+  Se configuró OSPF en todos los routers de la topología, respetando áreas, adyacencias y métricas.
+
+- **Configuración de áreas:**  
+  Se establecieron correctamente las áreas OSPF.
+    Area 0: RA →  RB → RC → RZY
+    Area 1: RH →  RG → RF → RE
+    Area 2: RWX → RJ → RK → RL
+ 
+    Interconexiones entre zonas a través de RA–RH–RWX, RB–RG–RK, RC–RF–RK, RZY–RE–R 
+    en carpetas de imagenes se encuentr la tabla de costos
+
+- **Asignación de costos:**  
+  Se creó un archivo `metricas.txt` con todos los costos asignados por interfaz.
+
+- **Generación y verificación del árbol SPF:**  
+  Se calculó el árbol SPF desde el router **RA** (router con salida a Internet).
+
+- **Propagación de rutas y pruebas de convergencia:**  
+  Se realizaron reinicios de routers y modificaciones de métricas para validar el recálculo automático de rutas.
+
+---
+
+## ▶️ Comandos utilizados para levantar o reiniciar el laboratorio
 
 ```bash
-  kathara lstart --noterminals / kathara lrestart --noterminals
+kathara lstart --noterminals
+kathara lrestart --noterminals
 
 
 ## Carpeta de imágenes
