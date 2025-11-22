@@ -26,10 +26,10 @@
 
 ---
 
-## ▶️ Comandos utilizados para levantar o reiniciar el laboratorio
+## ▶️ Comandos utilizados para levantar o reiniciar el laboratorio  --noterminals es opcional.
 
 ```bash
-kathara lstart --noterminals
+kathara lstart --noterminals    
 kathara lrestart --noterminals  
 ```
 
