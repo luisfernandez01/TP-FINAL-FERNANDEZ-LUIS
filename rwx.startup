@@ -21,13 +21,15 @@ ip link set eth3 up
 # --------------------------
 sysctl -w net.ipv4.ip_forward=1
 # --------------------------
-# Levantar Zebra y OSPF
-# --------------------------
-sleep 1
-zebra -d -f /ospfd/zebra.conf
-sleep 1
-ospfd -d -f /ospfd/ospfd.conf
 
-# Mantener contenedor vivo
+#------------------------------
+# Iniciar Quagga (Zebra + OSPF)
+#------------------------------
+sleep 2
+
+/etc/init.d/quagga start
+
+#------------------------------
+# Mantener contenedor activo
+#------------------------------
 sleep infinity
-# --------------------------
