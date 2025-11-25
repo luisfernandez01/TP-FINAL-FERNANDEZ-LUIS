@@ -5,19 +5,19 @@
 #asignaciones de IP
 
 # Enlace RJ-RWX
-ip addr add 192.0.100.34/30 dev eth0
+ip addr add 192.168.100.38/30 dev eth0
 ip link set eth0 up
 
-# Enlace LJ
+# Enlace LAN LJ
 ip addr add 10.2.0.1/20 dev eth1
 ip link set eth1 up
 
 # Enlace RJ-RK
-ip addr add 192.50.100.38/30 dev eth2
+ip addr add 192.168.100.45/30 dev eth2
 ip link set eth2 up
 
 # Enlace RJ_RG
-ip addr add 182.169.28.24/30 dev eth3
+ip addr add 182.169.100.41/30 dev eth3
 ip link set eth3 up
 # --------------------------
 # Habilitar reenvío IP

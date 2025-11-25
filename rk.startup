@@ -5,7 +5,7 @@
 #ASIGNACIONES DE IP
 
 # Enlace RK-RJ
-ip addr add 192.50.100.37/30 dev eth0
+ip addr add 192.168.100.50/30 dev eth0
 ip link set eth0 up
 
 # Enlace LAN LK
@@ -13,11 +13,11 @@ ip addr add 192.169.3.1/30 dev eth1
 ip link set eth1 up
 
 # Enlace RK-RL
-ip addr add 192.60.100.42/30 dev eth2
+ip addr add 192.168.100.57/30 dev eth2
 ip link set eth2 up
 
 # Enlace RK-RF
-ip addr add 192.169.28.7/30 dev eth3
+ip addr add 192.168.100.49/30 dev eth3
 ip link set eth3 up
 # --------------------------
 # Habilitar reenvío IP

@@ -1,5 +1,5 @@
 # ============================
-# Router RH
+# Router RH Enlace RA,RWX,RG,LAN LH
 # ============================
 
 # --------------------------
@@ -13,15 +13,15 @@ ip link set eth0 up
 
 
 # Enlace RH-RWX
-ip addr add 192.20.100.29/30 dev eth1
+ip addr add 192.168.100.33/30 dev eth1
 ip link set eth1 up
 
 # Enlace RH-RG
-ip addr add 192.18.30.26/30 dev eth2
+ip addr add 192.168.100.26/30 dev eth2
 ip link set eth2 up
 
 # Enlace RH-RA
-ip addr add 192.168.15.46/30 dev eth3
+ip addr add 192.168.100.29/30 dev eth3
 ip link set eth3 up
 
 

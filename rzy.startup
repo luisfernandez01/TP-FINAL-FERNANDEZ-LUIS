@@ -7,9 +7,9 @@
 # Direccionamiento IP
 # --------------------------
  #Enlace con RC(EZY_C)
-ip addr add 192.168.120.10/30 dev eth0
+ip addr add 192.168.100.10/30 dev eth0
 # Enlace con RE (EZY_E)
-ip addr add 192.168.200.13/30 dev eth1
+ip addr add 192.168.100.13/30 dev eth1
  # LAN LY
 ip addr add 10.0.7.2/21 dev eth2  
 # LAN LZ

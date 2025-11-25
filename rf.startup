@@ -9,11 +9,11 @@
 #---------------------------
 
 # Enlace RF-RG
-ip addr add 192.168.30.21/30 dev eth0
+ip addr add 192.168.100.76/30 dev eth0
 ip link set eth0 up
 
 # Enlace RF-RK
-ip addr add 192.169.28.6/30 dev eth1
+ip addr add 192.169.100.50/30 dev eth1
 ip link set eth1 up
 
 # LAN LF (192.168.1.0/30)
@@ -25,7 +25,7 @@ ip addr add 192.168.250.17/30 dev eth3
 ip link set eth3 up
 
 # Enlace RF-RC
-ip addr add 192.168.28.52/30 dev eth4
+ip addr add 192.168.100.18/30 dev eth4
 ip link set eth4 up
 
 
