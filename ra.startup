@@ -32,14 +32,10 @@ sysctl -w net.ipv4.ip_forward=1
 # -----------------------------
 sleep 2   # esperar que las interfaces estén activas
 
-
-#------------------------------
-# Iniciar Quagga (Zebra + OSPF)
-#------------------------------
-sleep 2
-
-/etc/init.d/quagga start
-
+# Rutas relativas dentro del contenedorn
+zebra -d -f /ospfd/zebra.conf
+sleep 1
+ospfd -d -f /ospfd/ospfd.conf
 
 # ---------------------------------
 # Mantener vivo el contenedor
