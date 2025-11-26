@@ -8,8 +8,7 @@
  **Generación y verificación del arbol spf:** Se calculó el árbol SPF desde el router RA (salida a Internet),
 **Propagación de rutas y Pruebas de convergencia :**Se reinician router y modifican costos  para validar reclaculo automáticos.  
 
-```bash
-  kathara lstart --noterminals / kathara lrestart --noterminals
+`  kathara lstart --noterminals / kathara lrestart --noterminals`
 
 
 ## Carpeta de imágenes
