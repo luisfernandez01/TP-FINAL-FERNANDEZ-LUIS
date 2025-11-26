@@ -28,6 +28,15 @@ ip link set eth3 up
 ip addr add 192.168.100.76/30 dev eth4
 ip link set eth4 up
 
+
+# -----------------------------
+# para que  funciones enrutamiento dianmico
+# -----------------------------
+cp /rf/etc/quagga/daemons /etc/quagga
+cp /rf/etc/quagga/zebra.conf /etc/quagga
+cp /rf/etc/quagga/ospfd.conf /etc/quagga
+
+
 # --------------------------
 # Habilitar reenvío IP
 # --------------------------

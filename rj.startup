@@ -30,6 +30,13 @@ sysctl -w net.ipv4.ip_forward=1
 
 # --------------------------
 
+# -----------------------------
+# para que funcione enrutamiento dianmico
+# -----------------------------
+cp /rj/etc/quagga/daemons /etc/quagga
+cp /rj/etc/quagga/zebra.conf /etc/quagga
+cp /rj/etc/quagga/ospfd.conf /etc/quagga
+
 
 #------------------------------
 # Iniciar Quagga (Zebra + OSPF)
