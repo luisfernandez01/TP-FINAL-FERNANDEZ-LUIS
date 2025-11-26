@@ -9,7 +9,7 @@
 **Propagación de rutas y Pruebas de convergencia :**Se reinician router y modifican costos  para validar reclaculo automáticos.  
 
 ```bash
-  kathara lstart --noterminals / kathara lrestart --noterminals```
+  kathara lstart --noterminals / kathara lrestart --noterminals
 
 
 ## Carpeta de imágenes
