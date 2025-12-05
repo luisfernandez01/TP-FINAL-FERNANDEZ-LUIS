@@ -10,5 +10,4 @@ IN NS ha1.empresa.izo.
 
 ; Hosts y gateway en 10.0.0.0/16
 1   IN PTR hb1.empresa.izo.       ; 10.0.0.1 (HB1)
-255 IN PTR rb-eth3.empresa.izo.   ; 10.0.255.254 (Gateway RB)  ; (usamos 255 as last-octet in file comments but actual last octet is 254)
-
+255 IN PTR rb-eth3.empresa.izo.   ; 10.0.255.254 (Gateway RB) 

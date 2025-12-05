@@ -29,6 +29,12 @@ hw1     IN  A       172.16.30.1       ; GW: 172.16.30.6 / Router: RWX / Interfac
 hj1     IN  A       10.2.0.1          ; GW: 10.2.15.254 / Router: RJ / Interface: ETH1
 hk1     IN  A       182.168.3.1       ; GW: 182.168.3.17 / Router: RK / Interface: ETH1
 hl1     IN  A       192.168.0.1       ; GW: 192.168.15.254 / Router: RL / Interface: ETH1
+hl2     IN  A       192.168.0.2
+hl3     IN  A       192.168.0.3
+hl4     IN  A       192.168.0.4
+hl5     IN  A       192.168.0.5
+
+
 
 ; -------------------------
 ; Routers — Zona 0 (por interfaz)

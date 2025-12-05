@@ -39,5 +39,10 @@
     La configuración respeta la nomenclatura de los routers y hosts según la topología.
     Funciona con scripts de Kathará (lstart y lrestart) sin modificaciones.
 
+## Carpeta de imágenes
+Todas las imágenes del proyecto están en la carpeta `imagenes`.
+
+### Topología de red
+![Topología de red](imagenes/.gitkeep)
 
 

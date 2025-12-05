@@ -1,0 +1,18 @@
+$TTL 86400
+@   IN  SOA ha1.empresa.izo. admin.empresa.izo. (
+        2025120401 ; Serial
+        3600
+        1800
+        604800
+        86400 )
+
+    IN NS ha1.empresa.izo.
+
+1   IN PTR hl1.empresa.izo.
+2   IN PTR hl2.empresa.izo.
+3   IN PTR hl3.empresa.izo.
+4   IN PTR hl3.empresa.izo.
+5   IN PTR hl5.empresa.izo.
+
+254 IN PTR rl.empresa.izo.   ; Gateway RL
+
