@@ -1,0 +1,14 @@
+$TTL 86400
+@ IN SOA ha1.empresa.izo. admin.empresa.izo. (
+    2025120301
+    3600
+    1800
+    604800
+    86400 )
+
+IN NS ha1.empresa.izo.
+
+; Hosts y gateway en 10.0.0.0/16
+1   IN PTR hb1.empresa.izo.       ; 10.0.0.1 (HB1)
+255 IN PTR rb-eth3.empresa.izo.   ; 10.0.255.254 (Gateway RB)  ; (usamos 255 as last-octet in file comments but actual last octet is 254)
+

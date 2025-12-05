@@ -5,7 +5,13 @@
 ip addr add 172.16.0.1/24 dev eth3
 ip link set eth3 up
 ip route add default via 172.16.0.254
-echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
+
+# Para que funcione el nameserver
+cd shared
+cp resolv.conf /etc/
+
+
 
 
 

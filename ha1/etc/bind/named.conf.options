@@ -1,0 +1,27 @@
+options {
+    directory "/var/cache/bind";
+
+    // Reenvío de consultas externas a Internet
+    forwarders {
+        8.8.8.8;   // primario
+        8.8.4.4;   // secundario
+    };
+    forward only;
+
+    dnssec-validation auto;
+
+    // Permitir consultas desde HA1 y LAN
+    allow-query {
+        localhost;
+        192.168.10.0/25;
+    };
+
+    recursion yes;
+    allow-recursion { localhost; 192.168.10.0/25; };
+
+    listen-on-v6 { none; };
+    listen-on { 127.0.0.1; 192.168.10.1; };
+
+    auth-nxdomain no;
+};
+

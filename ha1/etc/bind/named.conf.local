@@ -1,0 +1,94 @@
+//
+// Configuración de zonas locales
+//
+
+// ============================================================
+// Zona directa principal
+// ============================================================
+zone "empresa.izo" {
+    type master;
+    file "/etc/bind/db.empresa.izo";
+};
+
+// ============================================================
+// Zonas inversas — Cada una con su archivo propio
+// ============================================================
+
+// Red 192.168.10.0/25 (HA1)
+zone "10.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.192.168.10_25";
+};
+
+// Red 192.168.100.0/30 (enlaces de routers)
+zone "100.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.192.168.100.0_30";
+};
+
+// Red 10.0.0.0/16 (HB1)
+zone "0.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.10.0.0_16";
+};
+
+// Red 10.10.7.0/21 (HY1)
+zone "7.10.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.10.10.7_21";
+};
+
+// Red 10.10.10.0/30 (HZ1)
+zone "10.10.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.10.10.10_30";
+};
+
+// Red 10.1.1.0/30 (HG1)
+zone "1.1.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.10.1.1_0_30";
+};
+
+// Red 10.2.0.0/20 (HJ1)
+zone "0.2.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.10.2.0.0_20";
+};
+
+// Red 172.16.0.0/24 (HC1)
+zone "16.172.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.172.16.0.0_24";
+};
+
+// Red 172.20.0.0/22 (HH1)
+zone "20.172.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.172.20.0_22";
+};
+
+// Red 172.31.0.0/18 (HE1)
+zone "31.172.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.172.31.0_18";
+};
+
+// Red 192.168.1.0/30 (HF1)
+zone "1.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.192.168.1.0_30";
+};
+
+// Red 192.168.2.0/29 (HX1)
+zone "2.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.192.168.2.0_29";
+};
+
+// Red 192.168.3.0/28 (HK1)
+zone "3.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.rev.192.168.3.0_28";
+};
+

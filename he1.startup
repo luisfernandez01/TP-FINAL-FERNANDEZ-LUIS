@@ -7,5 +7,8 @@ ip addr add 172.31.0.3/18 dev eth2
 ip link set eth2 up
 # Gateway
 ip route add default via 172.31.63.254
-# DNS
-echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
+# Para que funcione el nameserver
+cd shared
+cp resolv.conf /etc/
+

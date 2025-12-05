@@ -9,6 +9,7 @@ ip link set eth1 up
 # Gateway
 ip route add default via 192.169.3.14
 
-# DNS
-echo "nameserver 8.8.8.8" > /etc/resolv.con
+# Para que funcione el nameserver
+cd shared
+cp resolv.conf /etc/
 

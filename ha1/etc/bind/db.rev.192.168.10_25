@@ -1,0 +1,14 @@
+$TTL 86400
+@   IN  SOA ha1.empresa.izo. admin.empresa.izo. (
+        2025120201 ; Serial
+        3600
+        1800
+        604800
+        86400 )
+
+    IN NS ha1.empresa.izo.
+
+; Hosts en 192.168.10.0/25
+1   IN PTR ha1.empresa.izo.        ; 192.168.10.1 (Servidor DNS)
+126 IN PTR ra-eth0.empresa.izo.   ; 192.168.10.126 (gateway RA)
+

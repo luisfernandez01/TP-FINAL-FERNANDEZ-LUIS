@@ -1,0 +1,58 @@
+$TTL 86400
+@   IN  SOA ha1.empresa.izo. admin.empresa.izo. (
+        2025120201 ; Serial
+        3600       ; Refresh
+        1800       ; Retry
+        604800     ; Expire
+        86400 )    ; Minimum
+        IN  NS  ha1.empresa.izo.
+
+; Routers — Zona 0
+1       IN PTR ra-eth2.empresa.izo.
+30      IN PTR ra-eth1.empresa.izo.
+
+2       IN PTR rb-eth0.empresa.izo.
+5       IN PTR rb-eth2.empresa.izo.
+69      IN PTR rb-eth1.empresa.izo.
+
+6       IN PTR rc-eth0.empresa.izo.
+75      IN PTR rc-eth1.empresa.izo.
+9       IN PTR rc-eth2.empresa.izo.
+
+10      IN PTR rzy-eth0.empresa.izo.
+13      IN PTR rzy-eth1.empresa.izo.
+
+; Routers — Zona 1
+17      IN PTR re-eth0.empresa.izo.
+53      IN PTR re-eth1.empresa.izo.
+14      IN PTR re-eth3.empresa.izo.
+
+21      IN PTR rf-eth0.empresa.izo.
+50      IN PTR rf-eth1.empresa.izo.
+18      IN PTR rf-eth3.empresa.izo.
+76      IN PTR rf-eth4.empresa.izo.
+
+25      IN PTR rg-eth0.empresa.izo.
+42      IN PTR rg-eth1.empresa.izo.
+22      IN PTR rg-eth3.empresa.izo.
+70      IN PTR rg-eth4.empresa.izo.
+
+33      IN PTR rh-eth1.empresa.izo.
+26      IN PTR rh-eth2.empresa.izo.
+29      IN PTR rh-eth3.empresa.izo.
+
+; Routers — Zona 2
+37      IN PTR rwx-eth2.empresa.izo.
+34      IN PTR rwx-eth3.empresa.izo.
+
+38      IN PTR rj-eth0.empresa.izo.
+45      IN PTR rj-eth2.empresa.izo.
+41      IN PTR rj-eth3.empresa.izo.
+
+46      IN PTR rk-eth0.empresa.izo.
+57      IN PTR rk-eth2.empresa.izo.
+49      IN PTR rk-eth3.empresa.izo.
+
+58      IN PTR rl-eth0.empresa.izo.
+54      IN PTR rl-eth3.empresa.izo.
+

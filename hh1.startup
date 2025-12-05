@@ -2,8 +2,13 @@
 # Host LH
 # Conectado a RH - LAN 172.20.0.0/22
 # =====================================================
-
+#Asignación de ip
 ip addr add 172.20.0.1/22 dev eth0
 ip link set eth0 up
+#gateway
 ip route add default via 172.20.3.254
+
+# Para que funcione el nameserver
+cd shared
+cp resolv.conf /etc/
 

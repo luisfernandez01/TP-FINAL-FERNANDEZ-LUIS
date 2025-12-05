@@ -1,0 +1,13 @@
+$TTL 86400
+@ IN SOA ha1.empresa.izo. admin.empresa.izo. (
+    2025120301
+    3600
+    1800
+    604800
+    86400 )
+
+IN NS ha1.empresa.izo.
+
+1   IN PTR hc1.empresa.izo.       ; 172.16.0.1 (HC1)
+254 IN PTR rc-eth3.empresa.izo.   ; 172.16.0.254 (Gateway RC)
+
