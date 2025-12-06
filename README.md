@@ -40,7 +40,7 @@
     Funciona con scripts de Kathará (lstart y lrestart) sin modificaciones.
 
 ## Carpeta de imágenes
-Todas las imágenes del proyecto están en la carpeta `imagenes`.
+Todas las imágenes del proyecto están en la carpeta `Imagenes`.
 
 ### Topología de red
 ![Topología de red](Imagenes/topologia_tp_final jpg)
