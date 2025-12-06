@@ -43,6 +43,6 @@
 Todas las imágenes del proyecto están en la carpeta `imagenes`.
 
 ### Topología de red
-![Topología de red](imagenes/.C:\Users\Luis\Downloads\topologia_tp_final (2).jpg)
+![Topología de red](imagenes/)
 
 
