@@ -1,16 +1,15 @@
 
 # =====================================================
-# Host Hl1 - LAN LL (192.162.0.0/20)
+# Host Hl3 - LAN LL (192.162.0.0/20)
 # =====================================================
 
-# IP y conexión
-ip addr add 192.162.0.3/20 dev eth1
+# Activar interfaz LAN
 ip link set eth1 up
 
-# Gateway
-ip route add default via 192.162.15.254
+# Pedir IP al servidor DHCP (RL)
+dhclient eth1
 
-# DNS
-echo "nameserver 8.8.8.8" > /etc/resolv.con
+# DNS (lo pide la consigna)
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
-
+sleep infinity

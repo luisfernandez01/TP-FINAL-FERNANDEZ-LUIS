@@ -1,43 +1,60 @@
 # =====================================================
 # Router RL
-## =====================================================
+# =====================================================
 
-#asignaciones IP
-
+# -------------------------
 # Enlace RL-RK
+# -------------------------
 ip addr add 192.168.100.58/30 dev eth0
 ip link set eth0 up
 
-# LAN LL (192.162.0.0/20)
-# Gateway para la LAN = 192.60.15.254 (RL)
-ip addr add 192.162.15.254/20 dev eth1
+# -------------------------
+# LAN LL (192.168.0.0/20)
+# Gateway LAN = 192.168.15.254
+# -------------------------
+ip addr add 192.168.15.254/20 dev eth1
 ip link set eth1 up
 
-# Enlace RL_RE
+# -------------------------
+# Enlace RL-RE
+# -------------------------
 ip addr add 192.168.100.54/30 dev eth3
 ip link set eth3 up
-# --------------------------
-# Habilitar reenvío IP
-# --------------------------
-sysctl -w net.ipv4.ip_forward=1
-# --------------------------
 
-# ---------------------------
-# Para que funciones enrutamiento dinamico
-# -----------------------------
+# -------------------------
+# Habilitar reenvío IP
+# -------------------------
+sysctl -w net.ipv4.ip_forward=1
+
+# -------------------------
+# QUAGGA OSPF
+# -------------------------
 cp /rl/etc/quagga/daemons /etc/quagga
 cp /rl/etc/quagga/zebra.conf /etc/quagga
 cp /rl/etc/quagga/ospfd.conf /etc/quagga
 
- 
-#------------------------------
-# Iniciar Quagga (Zebra + OSPF)
-#------------------------------
 sleep 2
-
 /etc/init.d/quagga start
 
-#------------------------------
+
+# =====================================================
+# INSTALAR DHCP AUTOMÁTICO
+# =====================================================
+dpkg -i /shared/dhcp/isc-dhcp-server_4.4.3-P1-2_amd64.deb
+
+# Copiar config persistente
+cp /rl/etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf
+cp /rl/etc/default/isc-dhcp-server /etc/default/isc-dhcp-server
+
+# Crear leases
+mkdir -p /var/lib/dhcp
+touch /var/lib/dhcp/dhcpd.leases
+chmod 644 /var/lib/dhcp/dhcpd.leases
+
+# Iniciar DHCP
+/usr/sbin/dhcpd -4 -cf /etc/dhcp/dhcpd.conf eth1
+
+# -------------------------
 # Mantener contenedor activo
-#------------------------------
+# -------------------------
 sleep infinity
