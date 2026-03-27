@@ -1,15 +1,17 @@
-# =================================
-# Router Rk
-# ================================
+# =============================================
+# Router Rk- Conexión a Internet real + OSPF+DNS
+# ==============================================
+# Usar DNS compartido
+ln -sf /shared/resolv.conf /etc/resolv.conf
+sleep 1
 
 #ASIGNACIONES DE IP
-
 # Enlace RK-RJ
 ip addr add 192.168.100.46/30 dev eth0
 ip link set eth0 up
 
 # Enlace LAN LK
-ip addr add 192.169.3.14/28 dev eth1
+ip addr add 192.168.3.14/28 dev eth1
 ip link set eth1 up
 
 # Enlace RK-RL
@@ -24,8 +26,6 @@ ip link set eth3 up
 # --------------------------
 sysctl -w net.ipv4.ip_forward=1
 # --------------------------
-
-
 # -----------------------------
 # para que funcione enrutamiento dianmico
 # -----------------------------
@@ -37,8 +37,5 @@ cp /rk/etc/quagga/ospfd.conf /etc/quagga
 
 sleep 2
 /etc/init.d/quagga start
-
-
-
 # Mantener contenedor vivo
 sleep infinity

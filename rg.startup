@@ -1,12 +1,13 @@
-# ===================================
-# Router RG - STARTUP CORREGIDO
-# Enlaces: RH(eth0), RJ(eth1), LG(eth2), RF(eth3), RB(eth4)
-# ===================================
+# ============================================
+# Router RG - Conexión a Internet real + OSPF+DNS
+# ============================================
+# Usar DNS compartido
+ln -sf /shared/resolv.conf /etc/resolv.conf
+sleep 1
 
 # --------------------------
 # Direccionamiento IP
 # --------------------------
-
 # Enlace RG-RH
 ip addr add 192.168.100.25/30 dev eth0
 ip link set eth0 up
@@ -16,7 +17,7 @@ ip addr add 192.168.100.41/30 dev eth1
 ip link set eth1 up
 
 # LAN LG
-ip addr add 10.1.1.2/30 dev eth2
+ip addr add 10.1.1.6/29 dev eth2
 ip link set eth2 up
 
 # Enlace RG-RF
@@ -32,17 +33,13 @@ ip link set eth4 up
 # --------------------------
 sysctl -w net.ipv4.ip_forward=1
 
-# --------------------------
-
-
+# ----------------------------
 # -----------------------------
 # para que funcione enrutamiento dianmico
 # -----------------------------
 cp /rg/etc/quagga/daemons /etc/quagga
 cp /rg/etc/quagga/zebra.conf /etc/quagga
 cp /rg/etc/quagga/ospfd.conf /etc/quagga
-
-
 #------------------------------
 # Iniciar Quagga (Zebra + OSPF)
 #------------------------------

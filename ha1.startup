@@ -25,6 +25,7 @@ chown bind:bind /etc/bind/*
 chmod 644 /etc/bind/*
 
 # Reiniciar servicio DNS
+sleep 5
 systemctl restart bind9
 systemctl enable bind9
 

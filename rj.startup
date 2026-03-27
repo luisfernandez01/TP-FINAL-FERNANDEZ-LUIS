@@ -1,7 +1,9 @@
-# ===================================
-# Router RJ - STARTUP CORREGIDO
-# Enlaces: RWX(eth0), LJ(eth1), RK(eth2), RG(eth3)
-# ===================================
+# ===============================================
+# Router RJ -- Conexión a Internet real + OSPF+DNS
+# ==============================================
+# Usar DNS compartido
+ln -sf /shared/resolv.conf /etc/resolv.conf
+sleep 1
 
 # --------------------------
 # Direccionamiento IP
@@ -12,7 +14,7 @@ ip addr add 192.168.100.38/30 dev eth0
 ip link set eth0 up
 
 # LAN LJ
-ip addr add 10.2.15.254/20 dev eth1
+ip addr add 10.2.31.254/19 dev eth1
 ip link set eth1 up
 
 # Enlace RJ-RK
@@ -22,29 +24,22 @@ ip link set eth2 up
 # Enlace RJ-RG
 ip addr add 192.168.100.41/30 dev eth3
 ip link set eth3 up
-
 # --------------------------
 # Habilitar reenvío IP
 # --------------------------
 sysctl -w net.ipv4.ip_forward=1
-
 # --------------------------
-
 # -----------------------------
 # para que funcione enrutamiento dianmico
 # -----------------------------
 cp /rj/etc/quagga/daemons /etc/quagga
 cp /rj/etc/quagga/zebra.conf /etc/quagga
 cp /rj/etc/quagga/ospfd.conf /etc/quagga
-
-
 #------------------------------
 # Iniciar Quagga (Zebra + OSPF)
 #------------------------------
 sleep 2
-
 /etc/init.d/quagga start
-
 #------------------------------
 # Mantener contenedor activo
 #------------------------------

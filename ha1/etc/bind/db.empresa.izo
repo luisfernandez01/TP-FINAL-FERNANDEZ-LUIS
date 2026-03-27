@@ -1,6 +1,6 @@
 $TTL 86400
 @   IN  SOA ha1.empresa.izo. admin.empresa.izo. (
-        9       ; Serial (incrementar cada cambio)
+        2026032301 ; Serial (incrementar cada cambio)
         604800  ; Refresh
         86400   ; Retry
         2419200 ; Expire
@@ -11,27 +11,35 @@ $TTL 86400
 ; -------------------------
 @       IN  NS      ha1.empresa.izo.
 ha1     IN  A       192.168.10.1      ; Host principal HA1
-www     IN  A       192.168.10.1      ; Alias web
+
 
 ; -------------------------
 ; Hosts (IP asignable, gateway, router/interface)
 ; -------------------------
-hb1     IN  A       10.0.0.1          ; GW: 10.0.255.254 / Router: RB / Interface: ETH3
-hc1     IN  A       172.16.0.1        ; GW: 172.16.0.254 / Router: RC / Interface: ETH3
-hz1     IN  A       10.10.10.1        ; GW: 10.10.10.2 / Router: RZY / Interface: ETH3
-hy1     IN  A       10.10.7.1         ; GW: 10.10.7.254 / Router: RZY / Interface: ETH2
-he1     IN  A       172.31.63.1       ; GW: 172.31.63.254 / Router: RE / Interface: ETH2
-hf1     IN  A       192.168.1.1       ; GW: 192.168.1.2 / Router: RF / Interface: ETH2
-hg1     IN  A       10.1.1.1          ; GW: 10.1.1.2 / Router: RG / Interface: ETH2
-hh1     IN  A       172.20.3.1        ; GW: 172.20.3.254 / Router: RH / Interface: ETH0
-hx1     IN  A       192.168.2.1       ; GW: 192.168.2.6 / Router: RWX / Interface: ETH0
-hw1     IN  A       172.16.30.1       ; GW: 172.16.30.6 / Router: RWX / Interface: ETH1
-hj1     IN  A       10.2.0.1          ; GW: 10.2.15.254 / Router: RJ / Interface: ETH1
-hk1     IN  A       182.168.3.1       ; GW: 182.168.3.17 / Router: RK / Interface: ETH1
-hl1     IN  A       192.168.0.1       ; GW: 192.168.15.254 / Router: RL / Interface: ETH1
+; -------------------------
+; Hosts
+; -------------------------
+hb1     IN  A       10.0.0.1          ; GW: 10.0.255.254 / RB / ETH3
+hc1     IN  A       172.16.0.1        ; GW: 172.16.1.254 / RC / ETH3
+hz1     IN  A       10.10.10.1        ; GW: 10.10.10.6 / RZY / ETH3
+hy1     IN  A       10.10.8.1         ; GW: 10.10.3.254 / RZY / ETH2
+he1     IN  A       172.31.0.1        ; GW: 172.31.63.254 / RE / ETH2
+hf1     IN  A       192.168.1.1       ; GW: 192.168.1.6 / RF / ETH2
+hg1     IN  A       10.1.1.1          ; GW: 10.1.1.6 / RG / ETH2
+hh1     IN  A       172.20.0.1        ; GW: 172.20.3.254 / RH / ETH0
+hx1     IN  A       192.168.2.1       ; GW: 192.168.2.6 / RWX / ETH0
+hw1     IN  A       172.16.30.1       ; GW: 172.16.30.6 / RWX / ETH1
+hj1     IN  A       10.2.0.1          ; GW: 10.2.31.254 / RJ / ETH1
+hk1     IN  A       192.168.3.1       ; GW: 192.168.3.14 / RK / ETH1
+hl1     IN  A       192.168.0.1       ; GW: 192.168.0.254 / RL / ETH1
+hl2     IN  A       192.168.0.2       ; GW: 192.168.0.254 / RL / ETH1
+hl3     IN  A       192.168.0.3       ; GW: 192.168.0.254 / RL / ETH1
+hl4     IN  A       192.168.0.4       ; GW: 192.168.0.254 / RL / ETH1
+hl5     IN  A       192.168.0.5       ; GW: 192.168.0.254 / RL / ETH1
+
 
 ; -------------------------
-; Routers — Zona 0 (por interfaz)
+; Routers — Zona 0
 ; -------------------------
 ra-eth0     IN A 192.168.10.126
 ra-eth1     IN A 192.168.100.30
@@ -45,13 +53,13 @@ rb-eth3     IN A 10.0.255.254
 rc-eth0     IN A 192.168.100.6
 rc-eth1     IN A 192.168.100.75
 rc-eth2     IN A 192.168.100.9
-rc-eth3     IN A 172.16.0.254
+rc-eth3     IN A 172.16.1.254
 
-rzy         IN A 192.168.100.9
-rzy-eth0    IN A 192.168.100.9
+rzy-eth0    IN A 192.168.100.10
 rzy-eth1    IN A 192.168.100.13
 rzy-eth2    IN A 10.10.7.254
-rzy-eth3    IN A 10.10.10.2
+rzy-eth3    IN A 10.10.10.6
+
 
 ; -------------------------
 ; Routers — Zona 1
@@ -63,13 +71,13 @@ re-eth3     IN A 192.168.100.14
 
 rf-eth0     IN A 192.168.100.21
 rf-eth1     IN A 192.168.100.50
-rf-eth2     IN A 192.168.1.2
+rf-eth2     IN A 192.168.1.6
 rf-eth3     IN A 192.168.100.18
 rf-eth4     IN A 192.168.100.76
 
 rg-eth0     IN A 192.168.100.25
 rg-eth1     IN A 192.168.100.42
-rg-eth2     IN A 10.1.1.2
+rg-eth2     IN A 10.1.1.6
 rg-eth3     IN A 192.168.100.22
 rg-eth4     IN A 192.168.100.70
 
@@ -77,6 +85,7 @@ rh-eth0     IN A 172.20.3.254
 rh-eth1     IN A 192.168.100.33
 rh-eth2     IN A 192.168.100.25
 rh-eth3     IN A 192.168.100.29
+
 
 ; -------------------------
 ; Routers — Zona 2
@@ -87,16 +96,15 @@ rwx-eth2    IN A 192.168.100.37
 rwx-eth3    IN A 192.168.100.34
 
 rj-eth0     IN A 192.168.100.38
-rj-eth1     IN A 10.2.15.254
+rj-eth1     IN A 10.2.31.254
 rj-eth2     IN A 192.168.100.45
 rj-eth3     IN A 192.168.100.41
 
 rk-eth0     IN A 192.168.100.46
-rk-eth1     IN A 182.168.3.17
+rk-eth1     IN A 192.168.3.14
 rk-eth2     IN A 192.168.100.57
 rk-eth3     IN A 192.168.100.49
 
 rl-eth0     IN A 192.168.100.58
-rl-eth1     IN A 192.168.15.254
+rl-eth1     IN A 192.168.0.254
 rl-eth3     IN A 192.168.100.54
-

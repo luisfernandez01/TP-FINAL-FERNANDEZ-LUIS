@@ -1,0 +1,18 @@
+$TTL 86400
+@ IN SOA ha1.empresa.izo. admin.empresa.izo. (
+   2026031504
+   3600
+   1800
+   604800
+   86400 )
+
+@ IN NS ha1.empresa.izo.
+
+; hosts
+
+1.0    IN PTR hc1.empresa.izo.     ; 172.16.0.1
+
+; routers
+254.1  IN PTR rc-eth3.empresa.izo. ; 172.16.1.254
+
+

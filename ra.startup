@@ -1,10 +1,10 @@
 #=======================================================
-# Router RA - Conexión a Internet real + OSPF
-# Enlaces con RH, RB y LAN con HA1
-# =========================================   
-#------------------------------
-# Levantar interfaces y asignar IPs
-# ---------------------------------
+# Router RA - Conexión a Internet real + OSPF+ DNS
+#=======================================================   
+
+# Usar DNS compartido
+ln -sf /shared/resolv.conf /etc/resolv.conf
+
 sleep 1
 
 # eth0 - LAN RA (con HA1)
@@ -33,7 +33,6 @@ sysctl -w net.ipv4.ip_forward=1
 # -----------------------------
 iptables -t nat -A POSTROUTING -o eth3 -j MASQUERADE
 
-
 # -----------------------------
 # para que  funciones enrutamiento dianmico
 # -----------------------------
@@ -41,15 +40,12 @@ cp /ra/etc/quagga/daemons /etc/quagga
 cp /ra/etc/quagga/zebra.conf /etc/quagga
 cp /ra/etc/quagga/ospfd.conf /etc/quagga
 
-
-
 #------------------------------
 # Iniciar Quagga (Zebra + OSPF)
 #------------------------------
 sleep 2
 
 /etc/init.d/quagga start
-
 
 # ---------------------------------
 # Mantener vivo el contenedor

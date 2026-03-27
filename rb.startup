@@ -1,8 +1,8 @@
 # =====================================================
-# Router RB
-# Enlaces: RA (eth0), RG (eth1), RC (eth2)
-# LAN HB1 (eth3)
+# Router RB - Conexión a Internet real + OSPF+DNS
 # =====================================================
+# Usar DNS compartido
+ln -sf /shared/resolv.conf /etc/resolv.conf
 
 sleep 1
 

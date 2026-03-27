@@ -3,11 +3,11 @@
 # =====================================================
 
 # IP y conexión
-ip addr add 192.169.3.1/28 dev eth1
+ip addr add 192.168.3.1/28 dev eth1
 ip link set eth1 up
 
 # Gateway
-ip route add default via 192.169.3.14
+ip route add default via 192.168.3.14
 
 # Para que funcione el nameserver
 cd shared

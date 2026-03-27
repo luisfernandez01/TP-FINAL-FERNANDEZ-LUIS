@@ -3,6 +3,9 @@
 # Enlaces: RF (eth0), RL (eth1), RZY (eth3)
 # LAN LE (eth2)
 # =====================================================
+# Usar DNS compartido
+ln -sf /shared/resolv.conf /etc/resolv.conf
+sleep 1
 
 # --------------------------
 # Direccionamiento IP

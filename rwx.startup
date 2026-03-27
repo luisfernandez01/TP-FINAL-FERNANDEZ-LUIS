@@ -1,6 +1,10 @@
-#======================================
-# Router RWX
-#=====================================
+#=================================================
+# Router RWX - Conexión a Internet real + OSPF+DNS
+#==================================================
+
+# Usar DNS compartido
+ln -sf /shared/resolv.conf /etc/resolv.conf
+sleep 1
 # Enlace LAN  LX
 ip addr add 192.168.2.6/29 dev eth0
 ip link set eth0 up
@@ -21,7 +25,6 @@ ip link set eth3 up
 # --------------------------
 sysctl -w net.ipv4.ip_forward=1
 # --------------------------
-
 
 # -----------------------------
 # para que funcione enrutamiento dianmico

@@ -1,8 +1,9 @@
 # =====================================================
-# Router RF
-# Enlaces: RG (eth0),RK(eth1), RE(eth3),RC(eth4)
-# LAN LF (eth2)
+# Router RF - Conexión a Internet real + OSPF+DNS
 # =====================================================
+# Usar DNS compartido
+ln -sf /shared/resolv.conf /etc/resolv.conf
+sleep 1
 
 # --------------------------
 # Direccionamiento IP
@@ -16,8 +17,8 @@ ip link set eth0 up
 ip addr add 192.168.100.50/30 dev eth1
 ip link set eth1 up
 
-# LAN LF (192.168.1.0/30)
-ip addr add 192.168.1.2/30 dev eth2
+# LAN LF (192.168.1.0/29)
+ip addr add 192.168.1.6/29 dev eth2
 ip link set eth2 up
 
 # Enlace RF-RE

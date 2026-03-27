@@ -1,11 +1,11 @@
 # =====================================================
-# Host HY1 - LAN de LY (10.10.7.0/21)
+# Host HY1 - LAN de LY (10.10.8.0/21)
 # =====================================================
 # IP y conexión
-ip addr add 10.10.10.2/21 dev eth2
+ip addr add 10.10.8.1/21 dev eth2
 ip link set eth2 up
 # Gateway
-ip route add default via 10.10.7.254
+ip route add default via 10.10.15.254
 
 # Para que funcione el nameserver
 cd shared

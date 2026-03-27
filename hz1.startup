@@ -2,10 +2,10 @@
 # Host Hz1 - LAN de LZ (10.10.10.10/29)
 # =====================================================
 # IP y conexión
-ip addr add 10.10.2/29 dev eth3
+ip addr add 10.10.10.1/30 dev eth3
 ip link set eth3 up
 # Gateway
-ip route add default via 10.10.10.6
+ip route add default via 10.10.10.2
 
 # Para que funcione el nameserver
 cd shared
