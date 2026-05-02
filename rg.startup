@@ -13,7 +13,7 @@ ip addr add 192.168.100.25/30 dev eth0
 ip link set eth0 up
 
 # Enlace RG-RJ
-ip addr add 192.168.100.41/30 dev eth1
+ip addr add 192.168.100.42/30 dev eth1
 ip link set eth1 up
 
 # LAN LG
@@ -21,7 +21,7 @@ ip addr add 10.1.1.6/29 dev eth2
 ip link set eth2 up
 
 # Enlace RG-RF
-ip addr add 192.168.100.49/30 dev eth3
+ip addr add 192.168.100.22/30 dev eth3
 ip link set eth3 up
 
 # Enlace RG-RB

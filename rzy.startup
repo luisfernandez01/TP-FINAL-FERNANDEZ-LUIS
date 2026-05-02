@@ -22,7 +22,7 @@ ip addr add 10.10.15.254/21 dev eth2
 
 # LAN HZ1
 ip link set eth3 up
-ip addr add 10.10.10.6/30 dev eth3
+ip addr add 10.10.10.2/30 dev eth3
 
 # --------------------------
 # Habilitar reenvío IP

@@ -1,29 +1,27 @@
 # =====================================================
-# Router RL- Conexión a Internet real + OSPF+DNS
+# Router RL - Conexión a red + OSPF + DHCP + DNS
 # =====================================================
-# Usar DNS compartido
+
+# -------------------------
+# DNS compartido
+# -------------------------
 ln -sf /shared/resolv.conf /etc/resolv.conf
 sleep 1
 
-# --------------------------
+# -------------------------
 # Direccionamiento IP
-# --------------------------
 # -------------------------
+
 # Enlace RL-RK
-# -------------------------
 ip addr add 192.168.100.58/30 dev eth0
 ip link set eth0 up
 
-# -------------------------
-# LAN LL (192.168.0.0/24)
-# Gateway LAN = 192.168.0.254
-# -------------------------
+# LAN RL (192.168.0.0/24)
+# Gateway: 192.168.0.254
 ip addr add 192.168.0.254/24 dev eth1
 ip link set eth1 up
 
-# -------------------------
 # Enlace RL-RE
-# -------------------------
 ip addr add 192.168.100.54/30 dev eth3
 ip link set eth3 up
 
@@ -33,26 +31,28 @@ ip link set eth3 up
 sysctl -w net.ipv4.ip_forward=1
 
 # -------------------------
-# QUAGGA OSPF
+# QUAGGA (OSPF)
 # -------------------------
-cp /rl/etc/quagga/daemons /etc/quagga
-cp /rl/etc/quagga/zebra.conf /etc/quagga
-cp /rl/etc/quagga/ospfd.conf /etc/quagga
+cp /rl/etc/quagga/* /etc/quagga/
 sleep 2
-/etc/init.d/quagga start
-# =====================================================
-# INSTALAR DHCP AUTOMÁTICO
-# =====================================================
-dpkg -i /shared/dhcp/isc-dhcp-server_4.4.3-P1-2_amd64.deb
+/etc/init.d/quagga restart
 
-# Copiar config persistente
+# -------------------------
+# SERVIDOR DHCP
+# -------------------------
+dpkg -i /shared/dhcp/isc-dhcp-server_4.4.3-P1-2_amd64.deb
+apt -f install -y
+
 cp /rl/etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf
 cp /rl/etc/default/isc-dhcp-server /etc/default/isc-dhcp-server
-# Crear leases
+
 mkdir -p /var/lib/dhcp
 touch /var/lib/dhcp/dhcpd.leases
 chmod 644 /var/lib/dhcp/dhcpd.leases
-# Iniciar DHCP
+
+sleep 2
+
+# Iniciar DHCP en interfaz LAN
 /usr/sbin/dhcpd -4 -cf /etc/dhcp/dhcpd.conf eth1
 
 # -------------------------

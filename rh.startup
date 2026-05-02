@@ -8,7 +8,7 @@ sleep 1
 # Direccionamiento IP
 # --------------------------
 # LAN LH (172.20.0.0/22)
-ip addr add 172.20.7.254/22 dev eth0
+ip addr add 172.20.3.254/22 dev eth0
 ip link set eth0 up
 # Enlace RH-RWX
 ip addr add 192.168.100.33/30 dev eth1

@@ -7,7 +7,7 @@ ip addr add 10.2.0.1/19 dev eth1
 ip link set eth1 up
 
 # Gateway
-ip route add default via  10.2.0.31.254
+ip route add default via  10.2.31.254
 
 # Para que funcione el nameserver
 cd shared
