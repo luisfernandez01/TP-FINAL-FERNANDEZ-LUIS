@@ -1,6 +1,6 @@
 # Proyecto Final Laboratorio Kathará
 
-## Octavo registro – Configuración del Servidor DHCP,DNS y OSPF.
+## Noveno commit: versión final del laboratorio – correcciones de README e imágenes
  
 ## 1. Tabla de Routers y Hosts
 
@@ -322,3 +322,14 @@ show ip ospf interface
    dig ha1.empresa.izo
    ping -c3 192.168.0.1
    La captura generada puede analizarse posteriormente en Wireshark.
+```
+
+
+## Carpeta de imágenes
+Todas las imágenes del proyecto están en la carpeta `imagenes`.
+
+### Topología de red
+![Topología de red](imagenes/topologia_de_red_tp_final.png)
+
+### Captura de tráfico (Wireshark)
+![Captura de tráfico](imagenes/captura_general.png)
