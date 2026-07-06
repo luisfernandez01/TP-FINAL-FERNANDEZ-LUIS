@@ -18,7 +18,7 @@ En esta versión final del laboratorio se realizó una actualización de la conf
 
 ---
 
-### Ping Wireshark
+### Ping capturado con Wireshark
 ![Ping](imagenes/ping_RA_RL_Wireshark.png)
 
 # Captura de tráfico (Wireshark)
