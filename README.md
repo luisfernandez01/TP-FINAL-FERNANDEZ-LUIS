@@ -13,7 +13,7 @@ En esta versión final del laboratorio se realizó una actualización de la conf
 
 
 ## Carpeta de imágenes
-### Topología de red
+### Topologia de red
 ![Topología](imagenes/topologia_de_red_tp_final.png)
 
 ---
