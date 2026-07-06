@@ -14,7 +14,7 @@ En esta versión final del laboratorio se realizó una actualización de la conf
 
 ## Carpeta de imágenes
 ![Topología de red](imagenes/topologia_de_red_tp_final.png)
-![](imagenes/ping RA_RL_Wireshark.png)
+![Ping Wireshark](imagenes/ping_RA_RL_Wireshark.png)
 
 # Captura de tráfico (Wireshark)
 
